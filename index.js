@@ -4,8 +4,9 @@ const os = require('os');
 
 app.get('/', function (req, res) {
   
-  res.set({'Proxy': 'Olivier E.'});
+  res.set({'Proxy': 'Olivier EE'});
   res.set({'X-Forwarded-Host': os.hostname()});
+  res.set({'X-Forwarded-For': 'For set'});
 
   res.send('Hello World!')
 })
