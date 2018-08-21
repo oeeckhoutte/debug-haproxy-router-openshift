@@ -4,11 +4,14 @@ const os = require('os');
 
 app.get('/', function (req, res) {
   
+  console.log("Headers:");
+  console.log(req.headers);
+
   res.set({'Proxy': 'Olivier EE'});
   res.set({'X-Forwarded-Host': os.hostname()});
   res.set({'X-Forwarded-For': 'For set'});
 
-  res.send('Hello World!')
+  res.send(req.headers)
 })
 
 app.listen(8080, function () {
